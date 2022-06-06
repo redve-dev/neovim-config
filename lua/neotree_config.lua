@@ -10,7 +10,16 @@ return {
 		vim.fn.sign_define("DiagnosticSignHint",
 		{text = "", texthl = "DiagnosticSignHint"})
 		require("neo-tree").setup({
-
+			event_handlers = { 
+				{ 
+					event = "vim_buffer_enter", 
+					handler = function() 
+						if vim.bo.filetype == "neo-tree" then 
+							vim.cmd("setlocal nonumber") 
+						end 
+					end, 
+				},
+			},
 			close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 			enable_diagnostics = true,
 			default_component_configs = {
@@ -96,12 +105,6 @@ return {
 				}
 			},
 		},
-		event = "vim_buffer_enter", 
-		handler = function() 
-			if vim.bo.filetype == "neo-tree" then 
-				vim.cmd("setlocal nonumber") 
-			end 
-		end, 
 	})
 	vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 end
