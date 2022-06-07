@@ -12,13 +12,13 @@ return {
 		require("neo-tree").setup({
 			close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 			event_handlers = {
-				{
-					event = "neo_tree_buffer_enter",
-					handler = function ()
-						if vim.bo.filetype =="neo-tree" then
-							vim.cmd ("set nonumber")
+				{ 
+					event = "vim_buffer_enter", 
+					handler = function() 
+						if vim.bo.filetype == "neo-tree" then 
+							vim.cmd([[setlocal fillchars=eob:\ ]]) 
 						end
-					end,
+					end, 
 				},
 			},
 			enable_diagnostics = true,
