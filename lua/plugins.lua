@@ -1,20 +1,29 @@
-local neotree_conf=require('neotree_config')
+--local neotree_conf=require('neotree_config')
 return require('packer').startup(
 function()
 	use 'wbthomason/packer.nvim'
 	use 'windwp/nvim-autopairs'
 	use 'preservim/nerdcommenter'
 	use 'lukas-reineke/indent-blankline.nvim'
+	use "kyazdani42/nvim-web-devicons"
+
 	use {
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		requires = { 
-			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim" 
-		},
-		config=neotree_conf.config()
+		"kyazdani42/nvim-tree.lua",
+		cmd = "NvimTreeOpen",
+		keys = "<c-n>",
+		--config = conf("nvim-tree"),
+		requires = "nvim-web-devicons"
 	}
+	--use {
+	--"nvim-neo-tree/neo-tree.nvim",
+	--branch = "v2.x",
+	--requires = { 
+	--"nvim-lua/plenary.nvim",
+	--"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+	--"MunifTanjim/nui.nvim" 
+	--},
+	--config=neotree_conf.config()
+	--}
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
@@ -30,6 +39,7 @@ function()
 			}
 		end
 	}
-	use 'nvim-treesitter/nvim-treesitter'
+	use	'nvim-treesitter/nvim-treesitter'
+	use 'glepnir/zephyr-nvim'
 end
 )
