@@ -30,5 +30,6 @@ function()
 			}
 		end
 	}
+	use 'nvim-treesitter/nvim-treesitter'
 end
 )

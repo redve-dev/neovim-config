@@ -3,7 +3,6 @@ vim.g.completeopt="menu,menuone,noselect,noinsert"
 local cmp = require'cmp'
 local types = require('cmp.types')
 
-
 cmp.setup({
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -23,7 +22,8 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		['<Down>'] = cmp.mapping({
 			i = cmp.mapping.select_next_item({ behavior = types.cmp.SelectBehavior.Select }),
 			c = function(fallback)
@@ -84,3 +84,4 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 require'lspconfig'.clangd.setup {}
 require'lspconfig'.gopls.setup {}
+require'lspconfig'.pyright.setup {}
