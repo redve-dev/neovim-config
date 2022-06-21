@@ -5,31 +5,6 @@ function()
 	use 'windwp/nvim-autopairs'
 	use 'preservim/nerdcommenter'
 	use 'lukas-reineke/indent-blankline.nvim'
-	use "kyazdani42/nvim-web-devicons"
-
-	use {
-		"kyazdani42/nvim-tree.lua",
-		cmd = "NvimTreeOpen",
-		keys = "<c-n>",
-		--config = conf("nvim-tree"),
-		requires = "nvim-web-devicons"
-	}
-	--use {
-	--"nvim-neo-tree/neo-tree.nvim",
-	--branch = "v2.x",
-	--requires = { 
-	--"nvim-lua/plenary.nvim",
-	--"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-	--"MunifTanjim/nui.nvim" 
-	--},
-	--config=neotree_conf.config()
-	--}
-	use 'neovim/nvim-lspconfig'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
 	use {
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
@@ -39,7 +14,22 @@ function()
 			}
 		end
 	}
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = 'kyazdani42/nvim-web-devicons',
+	}
+
+
+--colors
 	use	'nvim-treesitter/nvim-treesitter'
 	use 'glepnir/zephyr-nvim'
+
+-- LSP
+	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
 end
 )
