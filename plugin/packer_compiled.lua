@@ -11,7 +11,7 @@ local no_errors, error_msg = pcall(function()
 
   local time
   local profile_info
-  local should_profile = false
+  local should_profile = true
   if should_profile then
     local hrtime = vim.loop.hrtime
     profile_info = {}
@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["bclose.vim"] = {
+    loaded = true,
+    path = "/home/redve/.local/share/nvim/site/pack/packer/start/bclose.vim",
+    url = "https://github.com/rbgrouleff/bclose.vim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/redve/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -89,15 +94,27 @@ _G.packer_plugins = {
     path = "/home/redve/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["dracula.nvim"] = {
+  ["github-nvim-theme"] = {
+    config = { "\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17github-theme\frequire\0" },
     loaded = true,
-    path = "/home/redve/.local/share/nvim/site/pack/packer/start/dracula.nvim",
-    url = "https://github.com/Mofiqul/dracula.nvim"
+    path = "/home/redve/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
+  ["inc-rename.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0" },
+    loaded = true,
+    path = "/home/redve/.local/share/nvim/site/pack/packer/start/inc-rename.nvim",
+    url = "https://github.com/smjonas/inc-rename.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/redve/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/home/redve/.local/share/nvim/site/pack/packer/start/lightline.vim",
+    url = "https://github.com/itchyny/lightline.vim"
   },
   nerdcommenter = {
     loaded = true,
@@ -144,29 +161,22 @@ _G.packer_plugins = {
     path = "/home/redve/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  purify = {
+  ["ranger.vim"] = {
     loaded = true,
-    path = "/home/redve/.local/share/nvim/site/pack/packer/start/purify",
-    url = "https://github.com/kyoz/purify"
-  },
-  ["todo-comments.nvim"] = {
-    config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0" },
-    loaded = true,
-    path = "/home/redve/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
-    url = "https://github.com/folke/todo-comments.nvim"
-  },
-  ["zephyr-nvim"] = {
-    loaded = true,
-    path = "/home/redve/.local/share/nvim/site/pack/packer/start/zephyr-nvim",
-    url = "https://github.com/glepnir/zephyr-nvim"
+    path = "/home/redve/.local/share/nvim/site/pack/packer/start/ranger.vim",
+    url = "https://github.com/francoiscabrol/ranger.vim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
+-- Config for: inc-rename.nvim
+time([[Config for inc-rename.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15inc_rename\frequire\0", "config", "inc-rename.nvim")
+time([[Config for inc-rename.nvim]], false)
+-- Config for: github-nvim-theme
+time([[Config for github-nvim-theme]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17github-theme\frequire\0", "config", "github-nvim-theme")
+time([[Config for github-nvim-theme]], false)
 if should_profile then save_profiles() end
 
 end)
