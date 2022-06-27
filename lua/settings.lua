@@ -22,3 +22,5 @@ set.completeopt=menu,menuone,noselect
 set.ruler=true
 set.autoindent=true
 set.smartindent=true
+set.showmode=false
+set.inccommand="nosplit"

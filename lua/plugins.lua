@@ -1,30 +1,36 @@
---local neotree_conf=require('neotree_config')
 return require('packer').startup(
 function()
 	use 'wbthomason/packer.nvim'
 	use 'windwp/nvim-autopairs'
 	use 'preservim/nerdcommenter'
 	use 'lukas-reineke/indent-blankline.nvim'
+	use 'rbgrouleff/bclose.vim'
+	use 'francoiscabrol/ranger.vim'
+	use "nvim-lua/plenary.nvim"
+	use 'nathom/filetype.nvim' 
+	use 'lewis6991/impatient.nvim'
 	use {
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
+		"smjonas/inc-rename.nvim",
 		config = function()
-			require("todo-comments").setup {
-
-			}
-		end
-	}
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = 'kyazdani42/nvim-web-devicons',
+			require("inc_rename").setup()
+		end,
 	}
 
+	use 'kyazdani42/nvim-web-devicons'
+	use 'kyazdani42/nvim-tree.lua'
 
---colors
+	--colors
 	use	'nvim-treesitter/nvim-treesitter'
-	use 'glepnir/zephyr-nvim'
+	use 'itchyny/lightline.vim'
+	use({
+		'projekt0n/github-nvim-theme',
+		config = function()
+			require('github-theme').setup({
+			})
+		end
+	})
 
--- LSP
+	-- LSP
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
