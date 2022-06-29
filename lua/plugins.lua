@@ -9,13 +9,19 @@ function()
 	use "nvim-lua/plenary.nvim"
 	use 'nathom/filetype.nvim' 
 	use 'lewis6991/impatient.nvim'
+	use 'mg979/vim-visual-multi'
 	use {
 		"smjonas/inc-rename.nvim",
 		config = function()
 			require("inc_rename").setup()
 		end,
 	}
-
+	use {
+		'goolord/alpha-nvim',
+		config = function ()
+			require("alpha_conf")
+		end,
+	}
 	use 'kyazdani42/nvim-web-devicons'
 	use 'kyazdani42/nvim-tree.lua'
 
