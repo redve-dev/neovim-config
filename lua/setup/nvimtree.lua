@@ -4,11 +4,9 @@ require("nvim-tree").setup({
 		width = 23,
 		adaptive_size = true,
 		mappings = {
-			list = {
-				{ key = "p", action = "dir_up" },
-				{ key = "n", action = "dir_down" },
-			},
+			list = {},
 		},
+		signcolumn = "no",
 	},
 	renderer = {
 		group_empty = true,
