@@ -24,3 +24,4 @@ set.autoindent=true
 set.smartindent=true
 set.showmode=false
 set.inccommand="nosplit"
+set.termguicolors=true

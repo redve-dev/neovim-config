@@ -8,4 +8,8 @@ vim.g.indent_blankline_char='┊'
 
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
-vim.cmd[[colorscheme github_dark_default]]
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
+vim.cmd[[colorscheme onedark]]
