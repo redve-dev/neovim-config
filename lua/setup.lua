@@ -18,6 +18,7 @@ hi("CursorLineNr",{gui="NONE", cterm="NONE", ctermbg=238, ctermfg=5})
 hi("Conceal", {ctermfg=5})
 hi("IndentBlanklineChar",{ctermfg=245})
 hi("Pmenu",{ctermbg=23, ctermfg=247})
+vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#ff0000]]
 
 local set = vim.opt
 set.swapfile=false
@@ -46,3 +47,7 @@ set.smartindent=true
 set.showmode=false
 set.inccommand="nosplit"
 set.termguicolors=true
+
+vim.g.mapleader = ";"
+vim.g.hardtime_default_on=1
+vim.g.hardtime_allow_different_key=1

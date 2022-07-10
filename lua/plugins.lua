@@ -14,6 +14,7 @@ function()
 	use ({"mg979/vim-visual-multi"})
 	use ({"smjonas/inc-rename.nvim", config = require("setup/inc_rename") })
 	use ({"andweeb/presence.nvim", config = require("setup/presence")})
+	use ("takac/vim-hardtime")
 
 	--visual
 	use	({"nvim-treesitter/nvim-treesitter", config = require("setup/treesitter")})
